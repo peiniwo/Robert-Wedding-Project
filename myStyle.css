@@ -665,8 +665,9 @@ audio {
 	margin-left: 18%;
 	margin-bottom: 45px ;
 }
-video {
+iframe {
 	width: 80%;
+	height: 17vw;
 }
 @media only screen and (max-width: 991px) {
 	#video {
@@ -674,6 +675,9 @@ video {
 	}
 	.videoTitle {
 		font-size: 14px;
+	}
+	iframe {
+		height: 35vw;
 	}
 }
 @media only screen and (max-width: 485px) {
