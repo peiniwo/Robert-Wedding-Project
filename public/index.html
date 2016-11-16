@@ -7,29 +7,14 @@
     	<title>Robert Chang - The Wedding Singer</title>
 		<meta name="description" content="Robert Chang, a data scientist during weekdays, turns into a wedding singer on weekends. Lives and sings in the San Francisco Bay Area.">
 		<meta name="keywords" content="Wedding Singer, San Francisco, Bay Area, Taiwanese-American singer">
-		<link href="myStyle.css" rel="stylesheet" type="text/css">
 		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
-
-		<!-- Bootstrap -->
+		<link href="css/myStyle.css" rel="stylesheet" type="text/css">
     	<link href="css/bootstrap.min.css" rel="stylesheet">
-
-		<!--[if IE]> 
-			<script>
-				document.createElement("header"); 
-				document.createElement("footer");
-				document.createElement("nav");
-			</script> 
-		<![endif]-->
-		<!--[if lt IE 9]>
-			<script src="dist/html5shiv.js"></script>
-		<![endif]-->
-
 	</head>
-
 	<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
-<!-- Page Loader -->
+		<!-- Page Loader -->
 		<div class="loader"></div>
-<!-- Landing Page -->
+		<!-- Landing Page -->
 		<div class="landingPage">
 			<img src="images/Homepage/logo-name-2.png" alt="Robert Chang Logo" id="logo">
 			<div id="homeContent">
@@ -37,7 +22,6 @@
 					<p id="t-w">data scientist during weekdays,</p>
 					<p id="t-o"><span id="neon">wedding singer</span> on weekends.</p>
 				</div>
-					
 				<div class="navi">
 					<ul>
 						<li class="wline"><a href="#media">Audios &amp; Videos</a></li>
@@ -48,7 +32,7 @@
 				<a href="#robert"><img src="images/Homepage/aboutus.png" alt="Arrow to About Us" id="aboutMe" class="animated bounce"></a>
 			</div>
 		</div>
-<!-- Navigation Bar -->
+		<!-- Navigation Bar -->
 		<div class="naviBar">
 			<div id="bar">
 				<img src="images/navi/logo-only.png" alt="Brand Logo" id="logoOnly">
@@ -194,7 +178,10 @@
 				            </div>
 				            <div id="audiowrap">
 				                <div id="audio0">
-				                    <audio preload id="audio1" controls="controls">Your browser does not support HTML5 Audio!</audio>
+				                    <audio preload id="audio1" controls="controls">
+									 	<source type="audio/mpeg">
+					                    Your browser does not support HTML5 Audio!
+				                    </audio>
 				                </div>
 				                <div id="tracks">
 				                    <a id="btnPrev">&laquo;</a>
@@ -293,7 +280,7 @@
 				<div class="col-sm-12 col-md-6" id="contact">
 					<h3>Contact Us</h3>
 					<div id="form">
-						<form id="contact-form" name="htmlform" method="post" action="contact.php" class="go-top">
+						<form id="contact-form" class="go-top">
 							<div class="messages"></div>
 							<div id="basicInfo">
 								<div class="form-group">
@@ -367,17 +354,17 @@
 									<div class="help-block with-errors"></div>
 								</div>
 								<div class="form-group"> 
-									<input class="inputMaterial form-control" name="eventLong" id="eventLong" type="text" size="30" required data-error="Please, tell us how long it should be.">
+									<input class="inputMaterial form-control" name="eventDuration" id="eventDuration" type="text" size="30" required data-error="Please, tell us how long it should be.">
 									<span class="highlight"></span>
 									<span class="bar"></span>
-									<label for="eventLong">How long do you wish the performance be?</label>
+									<label for="eventDuration">How long do you wish the performance be?</label>
 									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 							<br><br>
 							<div id="submit">
-								<input type="submit" class="btn btn-success btn-send" name="submit" id="sent" value="Submit">
-								<input type="reset" name="clear" id="clear" value="Clear Form">
+								<button type="submit" class="btn btn-success btn-send" name="submit" id="sent" value="Submit">Send</button>
+								<button type="reset" name="clear" id="clear" value="Clear Form">Clear</button>
 							</div>
 						</form>
 					</div>
@@ -390,162 +377,6 @@
 			<div id="copyright"><p>&copy; 2016 by RobertChangWedding. All Rights Reserved.</p></div>
 			<div></div>
 		</footer>
-
-<!-- jQuery -->
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	    <script src="js/bootstrap.min.js"></script>
-	    <script src="js/validator.js"></script>
-        <script src="js/contact.js"></script>
-	    <script type="text/javascript">
-	    	// js code for the website
-			$(window).load(function() {
-				$(".loader").fadeOut("slow");
-			})
-
-			$(window).scroll(function () {
-				var wScroll = $(this).scrollTop();
-			    $("#logo").css({
-			    	"transform" : "translate(0px, "+ wScroll / 1.3 +"%)"
-			    });
-			});
-
-			$(window).scroll(function () {
-			    if ($(this).scrollTop() > 100) {
-			        if ($('#bar').hasClass('visible') == false) {
-			            $('#bar').stop().animate({
-			                left: '0px'
-			            }, function () {
-			                $('#bar').addClass('visible')
-			            });
-			        }
-			    } else {
-			        if ($('#bar').hasClass('visible') == true) {
-			            $('#bar').stop().animate({
-			                left: '-100px'
-			            }, function () {
-			                $('#bar').removeClass('visible')
-			            });
-			        }
-			    }
-			});
-
-			$(document).ready(function(){
-			    $('#bar').on('mouseover',function(e){
-			        $('#hideArea').addClass("show");
-			    });
-			    $('#hideArea').on('mouseover',function(e){
-			        $(this).addClass("show");
-			    });
-			    $('#hideArea').on('mouseout',function(e){
-			        $(this).removeClass("show");
-			    });
-			    $('#reviewFrame').each(function(){
-				   $(this).css('min-height', $('#reviewRight', this).outerHeight());
-				});
-			    $('#bookContents').each(function(){
-				   $(this).css('min-height', $('#contact', this).outerHeight());
-				});
-				$("#policy").css({'height':($("#contact").height()+'px')});
-			});
-<!-- Audio Player -->
-			var b = document.documentElement;
-			b.setAttribute('data-useragent',  navigator.userAgent);
-			b.setAttribute('data-platform', navigator.platform );
-
-			jQuery(function ($) {
-			    var supportsAudio = !! document.createElement('audio').canPlayType;
-			    if (supportsAudio) {
-			        var index = 0,
-			            playing = false;
-			        mediaPath = 'images/video/audio/',
-			        extension = '',
-			        tracks = [{
-			            "track": 1,
-			            "name": "遺憾 Regret - 方炯鑌 Abin Fang",
-			            "length": "04:00",
-			            "file": "3-regret"
-			        }, {
-			            "track": 2,
-			            "name": "好好先生 Nice Guy - 蕭煌奇 Ricky Xiao",
-			            "length": "04:33",
-			            "file": "1-niceGuy"
-			        }, {
-			            "track": 3,
-			            "name": "慢靈魂 Slow Soul - 盧廣仲 Crowd Lu",
-			            "length": "04:29",
-			            "file": "2-slowSoul"
-			        }],
-			        trackCount = tracks.length,
-			        npAction = $('#npAction'),
-			        npTitle = $('#npTitle'),
-			        audio = $('#audio1').bind('play', function () {
-			            playing = true;
-			            npAction.text('Now Playing...');
-			        }).bind('pause', function () {
-			            playing = false;
-			            npAction.text('Paused...');
-			        }).bind('ended', function () {
-			            npAction.text('Paused...');
-			            if ((index + 1) < trackCount) {
-			                index++;
-			                loadTrack(index);
-			                audio.play();
-			            } else {
-			                audio.pause();
-			                index = 0;
-			                loadTrack(index);
-			            }
-			        }).get(0),
-			        btnPrev = $('#btnPrev').click(function () {
-			            if ((index - 1) > -1) {
-			                index--;
-			                loadTrack(index);
-			                if (playing) {
-			                    audio.play();
-			                }
-			            } else {
-			                audio.pause();
-			                index = 0;
-			                loadTrack(index);
-			            }
-			        }),
-			        btnNext = $('#btnNext').click(function () {
-			            if ((index + 1) < trackCount) {
-			                index++;
-			                loadTrack(index);
-			                if (playing) {
-			                    audio.play();
-			                }
-			            } else {
-			                audio.pause();
-			                index = 0;
-			                loadTrack(index);
-			            }
-			        }),
-			        li = $('#plList li').click(function () {
-			            var id = parseInt($(this).index());
-			            if (id !== index) {
-			                playTrack(id);
-			            }
-			        }),
-			        loadTrack = function (id) {
-			            $('.plSel').removeClass('plSel');
-			            $('#plList li:eq(' + id + ')').addClass('plSel');
-			            npTitle.text(tracks[id].name);
-			            index = id;
-			            audio.src = mediaPath + tracks[id].file + extension;
-			        },
-			        playTrack = function (id) {
-			            loadTrack(id);
-			            audio.play();
-			        };
-			        extension = audio.canPlayType('audio/mpeg') ? '.mp3' : audio.canPlayType('audio/ogg') ? '.ogg' : '';
-			        loadTrack(index);
-			    }
-			});
-
-
-		</script>
-
+		<script src="dist/bundle.js"></script>
 	</body>
 </html>
