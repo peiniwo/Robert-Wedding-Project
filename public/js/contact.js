@@ -5,6 +5,7 @@ module.exports = function () {
     $('#contact-form').validator();
     $('#contact-form').on('submit', function (e) {
         e.preventDefault();
+        if ($('#submit button')[0].classList.contains('disabled')) return;
         if (this.elements[0].className === 'close') {
             this.removeChild(this.children[0]);
         }
@@ -27,7 +28,6 @@ module.exports = function () {
             url: url,
             data: data,
             success: function (data) {
-                console.log('returned', data)
                 var messageAlert = 'alert-' + (data.success ? 'success' : 'warning');
                 var messageText = data.message;
 

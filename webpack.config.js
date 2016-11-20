@@ -1,10 +1,10 @@
 'use strict'
-const path = require('path');
-const webpack = require('webpack');
-const env = process.env.NODE_ENV || 'development';
-const extractor = require("extract-text-webpack-plugin");
-const purify = require("purifycss-webpack-plugin");
-const config = {
+var path = require('path');
+var webpack = require('webpack');
+var env = process.env.NODE_ENV || 'development';
+var extractor = require("extract-text-webpack-plugin");
+var purify = require("purifycss-webpack-plugin");
+var config = {
     entry: {
         bundle: path.join(__dirname, 'public/js/index')
     },

@@ -2,16 +2,19 @@
   "name": "robert-wedding-singer",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "4.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/peiniwo/Robert-Wedding-Project.git"
+    "url": "https://github.com/peiniwo/Robert-Wedding-Project"
   },
-  "author": "",
+  "author": "PeiniWo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/peiniwo/Robert-Wedding-Project/issues"
@@ -23,6 +26,7 @@
     "bootstrap-validator": "^0.11.5",
     "express": "^4.14.0",
     "jquery": "^3.1.1",
+    "nodemailer": "^2.6.4",
     "unxss": "^0.1.1"
   },
   "devDependencies": {
